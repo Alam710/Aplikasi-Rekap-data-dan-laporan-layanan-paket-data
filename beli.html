@@ -1,0 +1,282 @@
+ <!DOCTYPE html>
+  <html>
+  <head>
+    <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+    <style type="text/css">
+      .file-upload input[type='file'] {
+        display: none;
+      }
+
+      body {
+        /*background: #00B4DB;
+        background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);*/
+        background: linear-gradient(to right, #ece423, #2f6a16);
+        /*height: 100vh;*/
+      }
+
+      .file-upload input[type='file'] {
+        display: none;
+      }
+      .rounded-lg {
+        border-radius: 1rem;
+      }
+
+      .custom-file-label.rounded-pill {
+        border-radius: 50rem;
+      }
+
+      .custom-file-label.rounded-pill::after {
+        border-radius: 0 50rem 50rem 0;
+      }
+      .warnaInput{
+        background: linear-gradient(to right, #ece423 0%, #2f6a16 40%);
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+  <a style="position: fixed;" href="peneliti.   php"><button class="btn warnaInput rounded-pill shadow"> << kembali</button></a>
+    <section>
+      <div class="container p-5">
+          <!-- For demo purpose -->
+          <div class="row mb-1 text-center text-white">
+            <div class="col-lg-10 mx-auto">
+              <h2 class="display-4">Unggah Berkas</h2>
+              <p class="lead">Subyek Penelitian Manusia</p>
+            </div>
+          </div>
+          <!-- End -->
+
+          <form role="form" method="post" action="userUpload.php" enctype="multipart/form-data">
+            <div class="row">
+              <div class="col-lg-5 mx-auto">
+                <div class="p-5 bg-white shadow rounded-lg"><img src="img/home/png/logoUpload.png" alt="" width="200" class="d-block mx-auto mb-1 rounded-pill">
+                  <div class="mb-2">
+                    <input type="text" name="judule" class="form-control rounded-lg" placeholder="Judul Penelitian" autofocus required>
+                  </div>
+                  <div class="mb-2">
+                    <input type="text" name="namaKetua" class="form-control rounded-lg" placeholder="Nama Ketua Peneliti" required>
+                  </div>
+                  <!-- Default bootstrap file upload-->
+                  <h6 class="text-lg-left mb-1 text-black">
+                    <b>1. Unggah surat permohonan</b>
+                  </h6>
+
+                  <div class="custom-file overflow-hidden rounded-pill mb-3">
+                    <input id="srtPermohonan" type="file" name="file[]" class="custom-file-input rounded-pill" required>
+                    <label for="srtPermohonan" class="custom-file-label rounded-pill warnaInput"><div id="srtPermohonan-filename">pdf file (max. 500kb)</div></label>
+                  </div>
+                  <!-- End -->
+
+                  <!-- Default bootstrap file upload-->
+                  <h6 class="text-lg-left mb-1 text-black">
+                    <b>2. Unggah surat pengantar</b>
+                  </h6>
+
+                  <div class="custom-file overflow-hidden rounded-pill mb-3">
+                    <input id="srtPengantar" type="file" name="file[]" class="custom-file-input rounded-pill" required>
+                    <label for="srtPengantar" class="custom-file-label rounded-pill"><div id="srtPengantar-filename">pdf file (max. 500kb)</div></label>
+                  </div>
+                  <!-- End -->
+
+                  <!-- Default bootstrap file upload-->
+                  <h6 class="text-lg-left mb-1 text-black">
+                    <b>3. Unggah berkas proposal penelitian</b>
+                  </h6>
+
+                  <div class="custom-file overflow-hidden rounded-pill mb-3">
+                    <input id="proposal" type="file" name="file[]" class="custom-file-input rounded-pill" required>
+                    <label for="proposal" class="custom-file-label rounded-pill warnaInput"><div id="proposal-filename">pdf file (max. 500kb)</div></label>
+                  </div>
+                  <!-- End -->
+
+                  <!-- Default bootstrap file upload-->
+                  <h6 class="text-lg-left mb-1 text-black">
+                    <b>4. Unggah formulir protokol penelitian</b>
+                  </h6>
+
+                  <div class="custom-file overflow-hidden rounded-pill mb-3">
+                    <input id="frmlrProtokol" type="file" name="file[]" class="custom-file-input rounded-pill" required>
+                    <label for="frmlrProtokol" class="custom-file-label rounded-pill"><div id="frmlrProtokol-filename">pdf file (max. 500kb)</div></label>
+                  </div>
+                  <!-- End -->
+
+                  <!-- Default bootstrap file upload-->
+                  <h6 class="text-lg-left mb-1 text-black">
+                    <b>5. Unggah cek list 7 standart etik penelitian kesehatan</b>
+                  </h6>
+
+                  <div class="custom-file overflow-hidden rounded-pill mb-3">
+                    <input id="cklst" type="file" name="file[]" class="custom-file-input rounded-pill" required>
+                    <label for="cklst" class="custom-file-label rounded-pill warnaInput"><div id="cklst-filename">pdf file (max. 500kb)</div></label>
+                  </div>
+                  <!-- End -->
+
+                  <!-- Default bootstrap file upload-->
+                  <h6 class="text-lg-left mb-1 text-black">
+                    <b>6. Unggah daftar tim peneliti beserta keahlian</b>
+                  </h6>
+
+                  <div class="custom-file overflow-hidden rounded-pill mb-3">
+                    <input id="dftrTim" type="file" name="file[]" class="custom-file-input rounded-pill" required>
+                    <label for="dftrTim" class="custom-file-label rounded-pill"><div id="dftrTim-filename">pdf file (max. 500kb)</div></label>
+                  </div>
+                  <!-- End -->
+
+                  <!-- Default bootstrap file upload-->
+                  <h6 class="text-lg-left mb-1 text-black">
+                    <b>7. Unggah CV peneliti</b>
+                  </h6>
+
+                  <div class="custom-file overflow-hidden rounded-pill mb-3">
+                    <input id="cv" type="file" name="file[]" class="custom-file-input rounded-pill" required>
+                    <label for="cv" class="custom-file-label rounded-pill warnaInput"><div id="cv-filename">pdf file (max. 500kb)</div></label>
+                  </div>
+                  <!-- End -->
+
+                  <!-- Default bootstrap file upload-->
+                  <h6 class="text-lg-left mb-1 text-black">
+                    <b>8. Unggah keterangan pembiayaan berikut garis besar perincian</b>
+                  </h6>
+
+                  <div class="custom-file overflow-hidden rounded-pill mb-3">
+                    <input id="pembiayaan" type="file" name="file[]" class="custom-file-input rounded-pill" required>
+                    <label for="pembiayaan" class="custom-file-label rounded-pill"><div id="pembiayaan-filename">pdf file (max. 500kb)</div></label>
+                  </div>
+                  <!-- End -->
+
+                  <!-- Default bootstrap file upload-->
+                  <h6 class="text-lg-left mb-1 text-black">
+                    <b>9. Unggah Ethical Clearance dari institusi lain bila sudah ada</b>
+                  </h6>
+
+                  <div class="custom-file overflow-hidden rounded-pill mb-3">
+                    <input id="ec" type="file" name="file[]" class="custom-file-input rounded-pill" >
+                    <label for="ec" class="custom-file-label rounded-pill warnaInput"><div id="ec-filename">pdf file (max. 500kb)</div></label>
+                  </div>
+                  <!-- End -->
+
+                  <!-- Default bootstrap file upload-->
+                  <h6 class="text-lg-left mb-1 text-black">
+                    <b>10. Unggah Lembar informed consent beserta daftar penjelasan (PSP) yang disampaikan kepada partisipan</b>
+                  </h6>
+
+                  <div class="custom-file overflow-hidden rounded-pill mb-3">
+                    <input id="psp" type="file" name="file[]" class="custom-file-input rounded-pill" required>
+                    <label for="psp" class="custom-file-label rounded-pill warnaInput"><div id="psp-filename">pdf file (max. 500kb)</div></label>
+                  </div>
+                  <!-- End -->
+
+                  <!-- Default bootstrap file upload-->
+                  <h6 class="text-lg-left mb-1 text-black">
+                    <b>11. Unggah surat pernyataan belum melaksanakan penelitian</b>
+                  </h6>
+
+                  <div class="custom-file overflow-hidden rounded-pill mb-3">
+                    <input id="srtPernyataan" type="file" name="file[]" class="custom-file-input rounded-pill" required>
+                    <label for="srtPernyataan" class="custom-file-label rounded-pill"><div id="srtPernyataan-filename">pdf file (max. 500kb)</div></label>
+                  </div>
+                  <!-- End -->
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+                <input value="KIRIM" type="submit" class="btn btn-primary" onclick="return confirm('Apakah Anda yakin data yang telah diinputkan sudah benar ?');">
+            </div>
+          </form>
+          <script type="text/javascript">
+            var input1 = document.getElementById( 'srtPermohonan' );
+            var infoArea1 = document.getElementById( 'srtPermohonan-filename' );
+            var input2 = document.getElementById( 'srtPengantar' );
+            var infoArea2 = document.getElementById( 'srtPengantar-filename' );
+            var input3 = document.getElementById( 'proposal' );
+            var infoArea3 = document.getElementById( 'proposal-filename' );
+            var input4 = document.getElementById( 'frmlrProtokol' );
+            var infoArea4 = document.getElementById( 'frmlrProtokol-filename' );
+            var input5 = document.getElementById( 'cklst' );
+            var infoArea5 = document.getElementById( 'cklst-filename' );
+            var input6 = document.getElementById( 'dftrTim' );
+            var infoArea6 = document.getElementById( 'dftrTim-filename' );
+            var input7 = document.getElementById( 'cv' );
+            var infoArea7 = document.getElementById( 'cv-filename' );
+            var input8 = document.getElementById( 'pembiayaan' );
+            var infoArea8 = document.getElementById( 'pembiayaan-filename' );
+            var input9 = document.getElementById( 'ec' );
+            var infoArea9 = document.getElementById( 'ec-filename' );
+            var input10 = document.getElementById( 'psp' );
+            var infoArea10 = document.getElementById( 'psp-filename' );
+            var input11 = document.getElementById( 'srtPernyataan' );
+            var infoArea11 = document.getElementById( 'srtPernyataan-filename' );
+
+            input1.addEventListener( 'change', showFileName );
+            input2.addEventListener( 'change', showFileName2 );
+            input3.addEventListener( 'change', showFileName3 );
+            input4.addEventListener( 'change', showFileName4 );
+            input5.addEventListener( 'change', showFileName5 );
+            input6.addEventListener( 'change', showFileName6 );
+            input7.addEventListener( 'change', showFileName7 );
+            input8.addEventListener( 'change', showFileName8 );
+            input9.addEventListener( 'change', showFileName9 );
+            input10.addEventListener( 'change', showFileName10 );
+            input11.addEventListener( 'change', showFileName11 );
+
+            function showFileName( event ) {
+              var input1 = event.srcElement;        
+              var fileName1 = input1.files[0].name;
+              infoArea1.textContent = fileName1;
+            }
+            function showFileName2( event ) {
+              var input2 = event.srcElement;        
+              var fileName2 = input2.files[0].name;
+              infoArea2.textContent = fileName2;
+            }
+            function showFileName3( event ) {
+              var input3 = event.srcElement;        
+              var fileName3 = input3.files[0].name;
+              infoArea3.textContent = fileName3;
+            }
+            function showFileName4( event ) {
+              var input4 = event.srcElement;        
+              var fileName4 = input4.files[0].name;
+              infoArea4.textContent = fileName4;
+            }
+            function showFileName5( event ) {
+              var input5 = event.srcElement;        
+              var fileName5 = input5.files[0].name;
+              infoArea5.textContent = fileName5;
+            }
+            function showFileName6( event ) {
+              var input6 = event.srcElement;        
+              var fileName6 = input6.files[0].name;
+              infoArea6.textContent = fileName6;
+            }
+            function showFileName7( event ) {
+              var input7 = event.srcElement;        
+              var fileName7 = input7.files[0].name;
+              infoArea7.textContent = fileName7;
+            }
+            function showFileName8( event ) {
+              var input8 = event.srcElement;        
+              var fileName8 = input8.files[0].name;
+              infoArea8.textContent = fileName8;
+            }
+            function showFileName9( event ) {
+              var input9 = event.srcElement;        
+              var fileName9 = input9.files[0].name;
+              infoArea9.textContent = fileName9;
+            }
+            function showFileName10( event ) {
+              var input10 = event.srcElement;        
+              var fileName10 = input10.files[0].name;
+              infoArea10.textContent = fileName10;
+            }
+            function showFileName11( event ) {
+              var input11 = event.srcElement;        
+              var fileName11 = input11.files[0].name;
+              infoArea11.textContent = fileName11;
+            }
+          </script>
+        </div>
+    </section>
+  </body>
+  </html>
